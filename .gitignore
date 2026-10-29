@@ -1,0 +1,42 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# ---------- 数据集（体积约 63MB，见 README「仓库内容边界」）----------
+yolo-cases/
+
+# ---------- 运行时产物（可由脚本重跑）----------
+runs/
+augmentation_output/
+eda_output/
+exports/
+
+# ---------- 运行期数据与缓存 ----------
+temp_uploads/
+gradio/
+inspection.db
+inspection.db-journal
+dataset_local.yaml
+
+# ---------- 第三方预训练权重与单次推理产物 ----------
+# yolo12n.pt 为 ultralytics 通用权重，首次运行会自动下载；自训练的权重在 models/best.pt
+yolo12n.pt
+vlm_result_*.jpg
+
+# ---------- 日志 ----------
+*.log
+
+# ---------- pip 安装残留 ----------
+pip-build-tracker-*/
+pip-ephem-wheel-cache-*/
+pip-install-*/
+
+# ---------- 系统与编辑器 ----------
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
