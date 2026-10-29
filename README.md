@@ -2,6 +2,12 @@
 
 技术栈：YOLOv12（ultralytics）+ Qwen3.8-Omni-Flash（DashScope，OpenAI 兼容）+ Gradio + SQLite + matplotlib。
 
+## 界面预览
+
+![AI 质检工作台](docs/img/workbench.png)
+
+左侧上传图片、选择检测引擎与置信度阈值；右侧显示标注后的检测结果与逐条缺陷明细（类别、置信度、坐标）。检测结果自动写入 SQLite，并可在同页完成人工审核（判对 / 误检 / 漏检）、查看统计报告与导出 Bad Case。五个 Tab 覆盖从检测到复核的完整闭环。
+
 ## 〇、仓库内容边界（重要）
 
 本仓库包含代码、权重与文档，**不含数据集与运行时产物**：
@@ -18,7 +24,7 @@
 
 ## 一、本机实测结果
 
-环境：Windows 11 / i9-13900HX（32 线程）/ RTX 4060 8GB（**实际用 CPU**，原因见问题清单 F8）/ Python 3.13 / torch 2.14.1+cpu / ultralytics 8.4.191
+环境：Windows 11 / i9-13900HX（32 线程）/ RTX 4060 8GB（**实际用 CPU**，原因见问题清单 F8）/ Python 3.13.7 / torch 2.7.0+cpu / ultralytics 8.3.100 / gradio 6.9.0
 
 | 环节              | 结果                                                                     | 耗时            |
 | --------------- | ---------------------------------------------------------------------- | ------------- |
@@ -69,7 +75,7 @@ ai-quality-inspection/
 ├─ generate_submission.py    批量预测与结果导出
 ├─ test_vlm_detect.py        VLM 单图测试
 ├─ models/best.pt            训练好的 YOLOv12n 权重（5.4MB）
-├─ docs/img/                 结果图（EDA 分布图、增强对比图等）
+├─ docs/img/                 界面截图与结果图（工作台、EDA 分布图、增强对比图）
 ├─ submission.csv            批量预测结果示例
 ├─ requirements.txt
 └─ 以下目录为运行时产物，不入库：

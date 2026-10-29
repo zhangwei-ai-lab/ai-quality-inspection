@@ -693,11 +693,11 @@ def build_app():
                     outputs=[export_result],
                 )
 
-            # ===== Tab5: 竞赛提交 =====
-            with gr.Tab("竞赛提交"):
+            # ===== Tab5: 批量预测 =====
+            with gr.Tab("批量预测"):
                 gr.Markdown("""
                 ### 批量预测测试集 & 生成 submission.csv
-                对测试集全部 **400张** 图片进行YOLO预测, 生成竞赛提交文件 `submission.csv`
+                对测试集全部 **400张** 图片进行YOLO预测, 生成提交文件 `submission.csv`
                 
                 **提交格式:** 每行1个检测框 (image_id, bbox, category_id, confidence)
                 """)
